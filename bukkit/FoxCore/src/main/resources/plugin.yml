@@ -1,0 +1,12 @@
+name: foxcore
+main: live.cakeyfox.foxcore.FoxCorePlugin
+version: 1.0
+api-version: 1.20
+author: CakeyFox
+description: FoxCore is a module for all CakeyFox plugins.
+
+commands:
+  connectToWebsocket:
+    description: Connect to the CakeyFox Websocket.
+    usage: /<command>
+    permission: foxcore.connectToWebsocket
