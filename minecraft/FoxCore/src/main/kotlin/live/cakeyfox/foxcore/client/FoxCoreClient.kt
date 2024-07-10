@@ -17,7 +17,7 @@ import live.cakeyfox.foxcore.FoxCorePlugin
 import live.cakeyfox.foxcore.client.data.ChatInfo
 import live.cakeyfox.foxcore.client.data.ServerStatus
 
-class FoxCoreClient(private val instance: FoxCorePlugin) {
+class FoxCoreClient() {
     private val client = HttpClient(CIO) {
         install(WebSockets)
     }

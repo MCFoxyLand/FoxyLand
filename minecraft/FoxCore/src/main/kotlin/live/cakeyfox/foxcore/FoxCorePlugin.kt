@@ -8,7 +8,7 @@ import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
 
 class FoxCorePlugin : JavaPlugin() {
-    val wsClient = FoxCoreClient(this)
+    val wsClient = FoxCoreClient()
 
     override fun onEnable() {
         logger.info("Starting FoxCore plugin")
