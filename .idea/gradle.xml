@@ -9,11 +9,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/bukkit" />
-            <option value="$PROJECT_DIR$/bukkit/FoxAuth" />
-            <option value="$PROJECT_DIR$/bukkit/FoxConomy" />
-            <option value="$PROJECT_DIR$/bukkit/FoxCore" />
             <option value="$PROJECT_DIR$/discord-bot" />
+            <option value="$PROJECT_DIR$/minecraft" />
+            <option value="$PROJECT_DIR$/minecraft/FoxAuth" />
+            <option value="$PROJECT_DIR$/minecraft/FoxConomy" />
+            <option value="$PROJECT_DIR$/minecraft/FoxCore" />
           </set>
         </option>
       </GradleProjectSettings>

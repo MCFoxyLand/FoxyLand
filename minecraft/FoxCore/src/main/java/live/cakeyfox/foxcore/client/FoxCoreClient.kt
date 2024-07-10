@@ -21,7 +21,7 @@ class FoxCoreClient(private val instance: FoxCorePlugin) {
     private val client = HttpClient(CIO) {
         install(WebSockets)
     }
-    private var session: WebSocketSession? = null
+    var session: WebSocketSession? = null
     private val scope = CoroutineScope(Dispatchers.IO)
 
     fun start() {
