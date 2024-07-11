@@ -25,6 +25,16 @@ class FoxCorePlugin : JavaPlugin() {
         val interval = 5 * 60 * 20L
         Bukkit.getScheduler().runTaskTimer(this, Runnable {
             wsClient.sendServerStatus(ServerStatus(players= server.onlinePlayers.size, tps = 20.0))
+            wsClient.session ?: run {
+                logger.warning("No websocket session found, attempting to start a new one.")
+                try {
+                    wsClient.start()
+                    logger.info("Websocket session started")
+                } catch (e: Exception) {
+                    logger.warning("Failed to start the websocket session")
+                }
+            }
+
         }, interval, interval)
     }
 }
