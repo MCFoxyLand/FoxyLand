@@ -68,13 +68,12 @@ class FoxCoreClient() {
     fun sendServerStatus(status: ServerStatus) {
         scope.launch {
             try {
-                val response = client.post("http://localhost:3000/status") {
+                client.post("http://localhost:3000/status") {
                     contentType(ContentType.Application.Json)
                     setBody(Json.encodeToString(status))
                 }
-                println("Status update response: ${response.status}")
             } catch (e: Exception) {
-                println("Error sending server status: ${e.message}")
+                println("[FoxCore] Error sending server status: ${e.message}")
                 e.printStackTrace()
             }
         }
