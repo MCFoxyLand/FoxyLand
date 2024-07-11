@@ -5,6 +5,8 @@ import live.cakeyfox.toro.utils.server.ChatInfo
 
 class ChatManager(val instance: InoueInstance) {
     fun sendMessage(message: ChatInfo) {
-        instance.jda.getTextChannelById(instance.config.getLogChannel())!!.sendMessage(message.content).queue()
+        instance.jda.getTextChannelById(instance.config.getLogChannel())!!
+            .sendMessage("[${message.author}] ${message.content}")
+            .queue()
     }
 }
