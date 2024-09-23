@@ -12,8 +12,9 @@ repositories {
 }
 
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
+    // JDA
+    implementation("net.dv8tion:JDA:5.0.0-beta.24")
+    implementation("club.minnced:jda-ktx:0.11.0-beta.20")
 }
 
 tasks.test {

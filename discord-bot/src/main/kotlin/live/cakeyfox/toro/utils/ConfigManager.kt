@@ -39,4 +39,16 @@ class ConfigManager {
     fun getPSQLPasswd(): String {
         return properties.getProperty("password") ?: throw IllegalStateException("Password not found in configuration")
     }
+
+    fun getURL(): String {
+        return properties.getProperty("apiUrl") ?: throw IllegalStateException("URL not found in configuration")
+    }
+
+    fun getAuth(): String {
+        return properties.getProperty("apiKey") ?: throw IllegalStateException("Auth not found in configuration")
+    }
+
+    fun getMongoUrl(): String {
+        return properties.getProperty("mongoUrl") ?: throw IllegalStateException("Mongo URL not found in configuration")
+    }
 }

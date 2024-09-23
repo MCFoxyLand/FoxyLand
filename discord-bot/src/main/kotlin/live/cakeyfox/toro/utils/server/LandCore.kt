@@ -1,13 +1,18 @@
 package live.cakeyfox.toro.utils.server
 
+import io.ktor.client.*
+import io.ktor.client.call.*
+import io.ktor.client.engine.cio.*
+import io.ktor.client.request.*
+import io.ktor.client.statement.*
 import io.ktor.server.application.*
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 import io.ktor.server.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.server.request.receive
-import io.ktor.server.response.respondText
 import io.ktor.http.HttpStatusCode
 import io.ktor.serialization.kotlinx.json.*
+import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import io.ktor.server.websocket.*
 import io.ktor.websocket.*
@@ -50,7 +55,8 @@ class LandCore(private val instance: InoueInstance) {
                 try {
                     val rawJson = call.receive<String>()
                     val status = Json.decodeFromString<ServerStatus>(rawJson)
-                    instance.jda.presence.activity = Activity.playing("${status.players} players online | mc.cakeyfox.live")
+                    instance.jda.presence.activity =
+                        Activity.playing("${status.players} players online | mc.cakeyfox.live")
                     call.respondText(HttpStatusCode.OK.toString())
                 } catch (e: SerializationException) {
                     logger.error("Serialization error: ${e.message}", e)
@@ -74,6 +80,7 @@ class LandCore(private val instance: InoueInstance) {
                                     println("Failed to parse JSON: ${e.message}")
                                 }
                             }
+
                             else -> {
                                 println("Unsupported frame type")
                             }

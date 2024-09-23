@@ -5,4 +5,3 @@ rootProject.name = "foxland"
 include("minecraft:FoxCore")
 include("minecraft:FoxConomy")
 include("discord-bot")
-include("minecraft:FoxAuth")

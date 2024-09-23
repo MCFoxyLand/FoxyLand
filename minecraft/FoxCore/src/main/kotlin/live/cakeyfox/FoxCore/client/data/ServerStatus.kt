@@ -1,4 +1,4 @@
-package live.cakeyfox.foxcore.client.data
+package live.cakeyfox.FoxCore.client.data
 
 import kotlinx.serialization.Serializable
 

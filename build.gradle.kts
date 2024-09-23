@@ -15,16 +15,11 @@ subprojects {
 
     repositories {
         mavenCentral()
-        maven {
-            url = uri("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
-        }
+        maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
+        maven("https://jitpack.io")
     }
 
     dependencies {
-        // JDA
-        implementation("net.dv8tion:JDA:5.0.0-beta.24")
-        implementation("club.minnced:jda-ktx:0.11.0-beta.20")
-
         // Kotlin
         implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0-RC")
@@ -39,6 +34,7 @@ subprojects {
         implementation("org.jetbrains.exposed:exposed-jdbc:0.41.1")
         implementation("org.jetbrains.exposed:exposed-java-time:0.41.1")
         implementation("org.postgresql:postgresql:42.5.0")
+        implementation("org.mongodb:mongodb-driver-sync:5.1.4")
 
         // Ktor
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
@@ -49,12 +45,15 @@ subprojects {
         implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.12")
         implementation("io.ktor:ktor-client-core:2.3.12")
         implementation("io.ktor:ktor-client-cio:2.3.12")
+
+        // VaultAPI
+        compileOnly("com.github.MilkBowl:VaultAPI:1.7")
+
+        // HikariCP
+        implementation("com.zaxxer:HikariCP:4.0.3")
     }
 }
 
-tasks.test {
-    useJUnitPlatform()
-}
 kotlin {
     jvmToolchain(17)
 }
