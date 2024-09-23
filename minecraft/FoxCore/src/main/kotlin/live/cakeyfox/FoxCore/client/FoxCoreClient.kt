@@ -79,7 +79,7 @@ class FoxCoreClient(val instance: FoxCorePlugin) {
 
     suspend fun getUser(username: String): UserResponse {
         return try {
-            val response = client.get("https://cakey.foxybot.win/user/minecraft/$username") {
+            val response = client.get("${instance.config.getString("api-url")}/user/minecraft/$username") {
                 headers {
                     append("Authorization", instance.config.getString("api-key") ?: "")
                 }
